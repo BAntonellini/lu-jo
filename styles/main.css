@@ -7,8 +7,17 @@ body {
     max-width: 99vw !important;
 }
 
+.bg-dark{
+    transition:750ms ease !important;
+    background: transparent !important;
+}
+
+.bg-dark.scrolled{
+    background: #4d4d4d !important;
+}
+
 .bg-grey{
-    background-color:#4d4d4d;
+    background-color:#4d4d4d !important;
 }
 
 .container-fluid {
@@ -23,15 +32,14 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto;
-    /* background: #cdcac5;
-    background: -moz-linear-gradient(left, #cdcac5 0%, #eff1bf 100%);
-    background: -webkit-linear-gradient(left, #cdcac5 0%, #eff1bf 100%);
-    background: linear-gradient(to right, #cdcac5 0%, #eff1bf 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cdcac5', endColorstr='#eff1bf', GradientType=1); */
 }
 
 #wrapper-navbar {
     padding: 1em 1em;
+}
+
+#corp-logo{
+    width: 80px;
 }
 
 .nav-link {
