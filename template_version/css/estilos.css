@@ -1,0 +1,30 @@
+header {
+    background: #cdcac5;
+    background: -moz-linear-gradient(left, #cdcac5 0%, #eff1bf 100%);
+    background: -webkit-linear-gradient(left, #cdcac5 0%, #eff1bf 100%);
+    background: linear-gradient(to right, #cdcac5 0%, #eff1bf 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cdcac5', endColorstr='#eff1bf', GradientType=1);
+  position: static;
+}
+
+.header .navbar {
+  background-color: transparent !important;
+}
+
+.footer-header {
+  min-height: 60px;
+  display: flex;
+  padding: 20px;
+  font-weight: 600;
+  background-color: #E7E7E7;
+  align-items: center;
+  justify-content: center;
+  color: #4f4f4f;
+  position:-webkit-sticky; 
+  position:sticky; bottom: 0;
+}
+
+section {
+  padding: 150px 0;
+}
+
