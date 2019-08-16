@@ -26,7 +26,9 @@
         </div>
         <div class="row justify-content-around">
             {% for noticia in ult_3_noticias %}
-            <img class="img-news" src="{{noticia.imagen.url}}" title="{{noticia.titulo}}">
+            <a href="{% url 'noticia' noticia.codigo %} " target="_blank">
+                <img class="img-news" src="{{noticia.imagen.url}}" title="{{noticia.titulo}}">
+            </a>
             {% endfor %}
 
             <!--  <img class="img-news" src="{% static 'core/img/noticias/news-1.jpg' %}" title="Noticia 1">

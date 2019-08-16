@@ -33,6 +33,9 @@ body {
 #corp-logo {
     max-height: 80px !important;
 }
+#corp-logo-nonlanding {
+    max-height: 50px !important;
+}
 
 #wrapper-navbar {
     padding: 1em 1em 1em 3em;
@@ -100,8 +103,14 @@ section#about {
     padding-bottom: 2.5em;
 }
 
+/* img-news es el estilo de imagen de cada noticia en LANDING */
 .img-news {
     max-width: 250px;
+}
+
+/* img-noticia es el estilo de imagen de cada ARTICULO */
+#img-noticia {
+    max-height: 300px !important;
 }
 
 .link-more {
