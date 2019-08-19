@@ -100,17 +100,51 @@
             <h3>Cursos</h3>
         </div>
         <div class="row justify-content-around">
-            <img class="img-news" src="https://picsum.photos/250" title="Noticia 1">
-            <img class="img-news" src="https://picsum.photos/250" title="Noticia 2">
-            <img class="img-news" src="https://picsum.photos/250" title="Noticia 3">
+
+            {% for curso in ult_3_cursos %}
+            <button type="button" class="boton-curso" data-slug="{{curso.codigo}}" data-toggle="modal" data-target="#modal">
+                <img class="img-news" src="{{curso.imagen.url}}" title="{{curso.titulo}}">
+            </button>
+            {% endfor %}
+
+            <script>
+                
+                
+            </script>
+
+            <!-- The Modal -->
+            <div class="modal" id="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modal Heading</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Modal body..
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
         </div>
         <div class="row justify-content-end">
             <a class="link-more" href="{{news}}" target="_blank">> ver todos</a>
         </div>
-
-
-
     </div>
+
+
 </section>
 <!-- Fin CURSOS -->
 

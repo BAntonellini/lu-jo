@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from noticias.views import DetalleNoticia
+from core.views import getcurso
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     #path('noticia/<slug:codigo>/', DetalleNoticia.as_view(), name='noticia'),
     path('noticia/', include('noticias.urls')),
+    #path(r'^getcurso$', getcurso, name="getcurso"),
 ]
 
 if settings.DEBUG:
