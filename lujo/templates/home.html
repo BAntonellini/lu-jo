@@ -102,14 +102,15 @@
         <div class="row justify-content-around">
 
             {% for curso in ult_3_cursos %}
-            <button type="button" class="boton-curso" data-slug="{{curso.codigo}}" data-toggle="modal" data-target="#modal">
+            <button type="button" class="boton-curso" data-slug="{{curso.codigo}}" data-toggle="modal"
+                data-target="#modal">
                 <img class="img-news" src="{{curso.imagen.url}}" title="{{curso.titulo}}">
             </button>
             {% endfor %}
 
             <script>
-                
-                
+
+
             </script>
 
             <!-- The Modal -->
@@ -119,18 +120,29 @@
 
                         <!-- Modal Header -->
                         <div class="modal-header">
-                            <h4 class="modal-title">Modal Heading</h4>
+                            <h4 class="modal-title">
+
+                            </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
 
                         <!-- Modal body -->
+                        <div class="text-center">
+                            <img src="" alt="" class="imagen-modal">
+                        </div>
                         <div class="modal-body">
-                            Modal body..
+
                         </div>
 
                         <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                        <div class="modal-footer justify-content-between">
+
+                            <button id="boton-registrar-curso" type="button" class="btn btn-success" data-dismiss="modal">
+                                Registrarme
+                            </button>
+
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                         </div>
 
                     </div>
@@ -186,23 +198,20 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="form_email">Email *</label>
-                                <input id="form_email" type="email" name="email" class="form-control"
+                                <label for="email">Email *</label>
+                                <input id="email" type="email" name="email" class="form-control"
                                     placeholder="Por favor ingresa tu email *" required="required"
-                                    data-error="Valid email is required.">
+                                    data-error="Debe ingresar un correo electrónico válido">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="form_need">Tipo de consulta *</label>
-                                <select id="form_need" name="need" class="form-control" required="required"
-                                    data-error="Por favor especifica tu consulta">
-                                    <option value=""></option>
-                                    <option value="Consulta_1">Consulta 1</option>
-                                    <option value="Consulta_2">Consulta 2</option>
-                                    <option value="Consulta_3">Consulta 3</option>
-                                    <option value="Consulta_4">No se inunda mas</option>
+                                <label for="tipo_consulta">Tipo de consulta *</label>
+                                <select id="tipo_consulta" name="need" class="form-control" required="required"
+                                    data-error="Por favor especifica tu consulta">                                    
+                                    <option value="masinfo">Más información</option>
+                                    <option value="cursos">Cursos</option>
                                 </select>
                                 <div class="help-block with-errors"></div>
                             </div>
