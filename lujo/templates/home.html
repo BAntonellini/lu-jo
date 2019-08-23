@@ -138,7 +138,8 @@
 
                         <div class="modal-footer justify-content-between">
 
-                            <button id="boton-registrar-curso" type="button" class="btn btn-success" data-dismiss="modal">
+                            <button id="boton-registrar-curso" type="button" class="btn btn-success"
+                                data-dismiss="modal">
                                 Registrarme
                             </button>
 
@@ -169,69 +170,64 @@
                 <h3>Contacto</h3>
             </div>
 
-            <form id="contact-form" method="post" action="contact.php" role="form">
-
-                <div class="messages"></div>
-
-                <div class="controls">
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="form_name">Nombre *</label>
-                                <input id="form_name" type="text" name="name" class="form-control"
-                                    placeholder="Por favor ingresa el nombre *" required="required"
-                                    data-error="Firstname is required.">
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="form_lastname">Apellido *</label>
-                                <input id="form_lastname" type="text" name="surname" class="form-control"
-                                    placeholder="Por favor ingresa tu apellido *" required="required"
-                                    data-error="Lastname is required.">
-                                <div class="help-block with-errors"></div>
+            <form id="contact-form" method="post" role="form">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nombre">{{form.nombre.label}}</label>
+                            <!-- <div class="input-group"> -->
+                            {{form.nombre}}
+                            <!-- </div> -->
+                            <div class="help-block with-errors">
+                                {{ form.nombre.errors }}
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input id="email" type="email" name="email" class="form-control"
-                                    placeholder="Por favor ingresa tu email *" required="required"
-                                    data-error="Debe ingresar un correo electrónico válido">
-                                <div class="help-block with-errors"></div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="apellido">{{form.apellido.label}}</label>
+                            {{form.apellido}}
+                            <div class="help-block with-errors">
+                                {{form.apellido.errors}}
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="tipo_consulta">Tipo de consulta *</label>
-                                <select id="tipo_consulta" name="need" class="form-control" required="required"
-                                    data-error="Por favor especifica tu consulta">                                    
-                                    <option value="masinfo">Más información</option>
-                                    <option value="cursos">Cursos</option>
-                                </select>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="form_message">Mensaje *</label>
-                                <textarea id="form_message" name="message" class="form-control"
-                                    placeholder="Escribi el mensaje *" rows="4" required="required"
-                                    data-error="Please, leave us a message."></textarea>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <input type="submit" class="btn btn-success btn-send" value="Enviar">
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">{{form.email.label}}</label>
+                            {{form.email}}
+                            <div class="help-block with-errors">
+                                {{form.email.errors}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="tipo_consulta">{{form.tipoconsulta.label}}</label>
+                            {{form.tipoconsulta}}
+                            <div class="help-block with-errors">
+                                {{form.tipoconsulta.errors}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_message">{{form.mensaje.label}}</label>
+                            {{form.mensaje}}                            
+                            <div class="help-block with-errors">
+                                {{form.mensaje.errors}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-success btn-send" value="Enviar">
+                    </div>
+                </div>                
             </form>
         </div>
     </div>

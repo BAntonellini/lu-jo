@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'noticias',
     'cursos',
     'vlog',
+    'contacto',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,12 @@ STATIC_URL = '/static/'
 # Media config
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Email config
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'us2.smtp.mailhostbox.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'no-reply@buenosairestechcluster.com' #CAMBIAR POR MAIL DE DESTINO DE PRODUCCION @LUJO
+EMAIL_HOST_PASSWORD = 'Cluster20.19'
+EMAIL_DESTINO = "antonellinibruno@gmail.com" #CAMBIAR POR MAIL DE DESTINO DE PRODUCCION @LUJO

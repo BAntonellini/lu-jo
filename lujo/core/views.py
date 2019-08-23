@@ -1,10 +1,14 @@
 import json
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from noticias.models import Noticia
 from vlog.models import Video
 from cursos.models import Curso
 from django.core import serializers
 from django.http import HttpResponse, JsonResponse
+from contacto.forms import ContactForm
+from django.core.mail import EmailMessage, send_mail
+from django.conf import settings
+from django.urls import reverse
 
 
 def home(request):
@@ -29,11 +33,49 @@ def home(request):
 
     ult_3_cursos = Curso.objects.all().order_by('-fecha_creacion')[:3]
 
+    # CONTACTO
+    # Instanciar ContactForm en blanco
+    contact_form = ContactForm()
+    # Si la request es POST
+    if request.method == 'POST': 
+        # Actualizar formulario con información
+        contact_form = ContactForm(data=request.POST) 
+        if contact_form.is_valid():
+            # Capturar inputs
+            nombre = request.POST.get('nombre', '')
+            apellido = request.POST.get('apellido', '')
+            email = request.POST.get('email', '')
+            tipoconsulta = request.POST.get('tipoconsulta', '')
+            mensaje = request.POST.get('mensaje', '')
+
+            remitente = settings.EMAIL_HOST_USER
+            casilla_destino = "antonellinibruno@gmail.com"
+
+            # Enviar correo y redireccionar a success/fail
+            email = EmailMessage(
+                "LU-JO - Contacto",
+                "De {} {} <{}>\n\nEscribió sobre '{}':\n{}".format(nombre, apellido, email, tipoconsulta, mensaje),
+                remitente,
+                [settings.EMAIL_DESTINO],
+                reply_to=[email]
+            )
+
+            try:
+                email.send(fail_silently=False)
+                # Success, redirect a SUCCESS
+                return redirect(reverse('home')+"?success")
+            except:
+                # Error sending, redirect a FAIL
+                return redirect(reverse('home')+"?fail")
+
+    # FIN CONTACTO
+
 
     return render(request, "home.html", {'ult_3_noticias': ult_3_noticias,
                                          'first_url_embed': first_url_embed,
                                          'resto_url_embed': resto_url_embed,
                                          'ult_3_cursos': ult_3_cursos,
+                                         'form': contact_form,
                                         })
 
 def getcurso(request):

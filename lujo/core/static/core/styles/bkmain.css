@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
     font-family: Calibri !important;
 }
 
@@ -7,35 +6,9 @@ body {
     max-width: 99vw !important;
 }
 
-.bg-dark{
-    transition:750ms ease !important;
-    background: transparent !important;
+.bg-grey {
+    background-color: #4d4d4d;
 }
-
-.bg-dark.scrolled{
-    background: #4d4d4d !important;
-}
-
-.bg-grey{
-    background-color:#4d4d4d !important;
-}
-
-header {
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    top: -60px;
-    opacity: 0;
-  }
-
-.logo-custom {
-    margin-top: 10px;
-    height: 300px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-  }
 
 .container-fluid {
     padding-left: 0px;
@@ -45,22 +18,27 @@ header {
 #wrapper-landing {
     /* width: 100vw; */
     height: 100vh;
-    background: 
-    /* top, transparent red */ 
-    linear-gradient(
-        rgba(99, 189, 180, 0.123),
-        rgb(0, 174, 157,1)
-      
-    ),
-    /* bottom, image */
-    url("../img/night-690041_1920.jpg");
+    background-image: url('../img/landing-bg.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto;
+    /* background: #cdcac5;
+    background: -moz-linear-gradient(left, #cdcac5 0%, #eff1bf 100%);
+    background: -webkit-linear-gradient(left, #cdcac5 0%, #eff1bf 100%);
+    background: linear-gradient(to right, #cdcac5 0%, #eff1bf 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cdcac5', endColorstr='#eff1bf', GradientType=1); */
+}
+
+#corp-logo {
+    max-height: 80px !important;
+}
+
+#corp-logo-nonlanding {
+    max-height: 50px !important;
 }
 
 #wrapper-navbar {
-    padding: 1em 1em;
+    padding: 1em 1em 1em 3em;
 }
 
 .nav-link {
@@ -125,8 +103,16 @@ section#about {
     padding-bottom: 2.5em;
 }
 
+/* img-news es el estilo de imagen de cada noticia en LANDING */
+
 .img-news {
     max-width: 250px;
+}
+
+/* img-noticia es el estilo de imagen de cada ARTICULO */
+
+#img-noticia {
+    max-height: 300px !important;
 }
 
 .link-more {
@@ -136,13 +122,10 @@ section#about {
     padding-top: 1em;
 }
 
-.link-more:hover,
-.link-more:active,
-.link-more:focus {
+.link-more:hover, .link-more:active, .link-more:focus {
     text-decoration: none;
     color: #222;
 }
-
 
 /* VLOG STYLESHEET */
 
@@ -169,16 +152,15 @@ section#about {
     text-decoration: none;
 }
 
-#wrapper-youtubelink a:hover,
-#wrapper-youtubelink a:active,
-#wrapper-youtubelink a:focus {
+#wrapper-youtubelink a:hover, #wrapper-youtubelink a:active, #wrapper-youtubelink a:focus {
     text-decoration: none;
     color: white;
 }
+
 /* END VLOG */
 
-
 /* CONTACTO */
+
 #wrapper-contacto {
     padding-top: 2.5em;
     background-color: #00ae9d
@@ -186,9 +168,17 @@ section#about {
 
 /* END CONTACTO */
 
-#wrapper-about,
-#wrapper-news,
-#wrapper-vlog,
-#wrapper-contacto {
+#wrapper-about, #wrapper-news, #wrapper-vlog, #wrapper-contacto {
     padding-bottom: 2em;
+}
+
+.boton-curso {
+    border: none !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.imagen-modal {
+    padding-top: 1em !important;
+    max-width: 300px !important;
 }
